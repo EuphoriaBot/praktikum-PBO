@@ -1,15 +1,16 @@
-import java.util.ArrayList;
-import java.util.Scanner;
+import java.util.*;
 
 public class Parfum {
 
     class DataParfum {
-        String jenis;
+        String nama;
         int harga;
+        int isi;
 
-        DataParfum(String jenis, int harga) {
-            this.jenis = jenis;
+        DataParfum(String nama, int harga, int isi) {
+            this.nama = nama;
             this.harga = harga;
+            this.isi = isi;
         }
     }
 
@@ -30,62 +31,55 @@ public class Parfum {
             System.out.println("2. Tampil Data");
             System.out.println("3. Update Data");
             System.out.println("4. Hapus Data");
-            System.out.println("0. Exit");
+            System.out.println("5. Exit");
             System.out.print("Masukkan pilihan anda: ");
             pilihan = input.nextInt();
             input.nextLine();
 
             switch (pilihan) {
-                case 1:
-                    tambah();
-                    break;
-                case 2:
-                    tampil();
-                    break;
-                case 3:
-                    update();
-                    break;
-                case 4:
-                    hapus();
-                    break;
-                case 0:
-                    System.out.println("Program selesai.");
-                    break;
-                default:
-                    System.out.println("Pilihan tidak valid.");
+                case 1 -> tambah();
+                case 2 -> tampil();
+                case 3 -> update();
+                case 4 -> hapus();
+                case 5 -> System.out.println("Program selesai.");
+                default -> System.out.println("Pilihan tidak valid.");
             }
         } while (pilihan != 0);
     }
 
     void tambah() {
-        System.out.print("Masukkan jenis parfum: ");
-        String jenis = input.nextLine();
+        System.out.print("Masukkan nama parfum: ");
+        String nama = input.nextLine();
 
         System.out.print("Masukkan harga parfum: ");
         int harga = input.nextInt();
+
+        System.out.print("Masukkan isi parfum (ml): ");
+        int isi = input.nextInt();
         input.nextLine();
 
-        daftarParfum.add(new DataParfum(jenis, harga));
-        System.out.println("Data berhasil ditambahkan.");
+        daftarParfum.add(new DataParfum(nama, harga, isi));
+        System.out.println("Data berhasil ditambahkan");
     }
 
     void tampil() {
         if (daftarParfum.isEmpty()) {
-            System.out.println("Data parfum masih kosong.");
+            System.out.println("Data parfum masih kosong");
             return;
         }
 
         for (int i = 0; i < daftarParfum.size(); i++) {
             System.out.println("Data ke-" + (i + 1));
-            System.out.println("Jenis : " + daftarParfum.get(i).jenis);
+            System.out.println("Nama  : " + daftarParfum.get(i).nama);
             System.out.println("Harga : " + daftarParfum.get(i).harga);
+            System.out.println("Isi   : " + daftarParfum.get(i).isi + " ml");
             System.out.println();
         }
     }
 
     void update() {
         if (daftarParfum.isEmpty()) {
-            System.out.println("Data parfum masih kosong.");
+            System.out.println("Data parfum masih kosong");
             return;
         }
 
@@ -95,26 +89,30 @@ public class Parfum {
         input.nextLine();
 
         if (index < 1 || index > daftarParfum.size()) {
-            System.out.println("Nomor data tidak valid.");
+            System.out.println("Nomor data tidak valid");
             return;
         }
 
-        System.out.print("Masukkan jenis parfum baru: ");
-        String jenisBaru = input.nextLine();
+        System.out.print("Masukkan nama parfum baru: ");
+        String namaBaru = input.nextLine();
 
         System.out.print("Masukkan harga baru: ");
         int hargaBaru = input.nextInt();
+
+        System.out.print("Masukkan isi baru (ml): ");
+        int isiBaru = input.nextInt();
         input.nextLine();
 
-        daftarParfum.get(index - 1).jenis = jenisBaru;
+        daftarParfum.get(index - 1).nama = namaBaru;
         daftarParfum.get(index - 1).harga = hargaBaru;
+        daftarParfum.get(index - 1).isi = isiBaru;
 
-        System.out.println("Data berhasil diupdate.");
+        System.out.println("Data berhasil diupdate");
     }
 
     void hapus() {
         if (daftarParfum.isEmpty()) {
-            System.out.println("Data parfum masih kosong.");
+            System.out.println("Data parfum masih kosong");
             return;
         }
 
@@ -124,11 +122,11 @@ public class Parfum {
         input.nextLine();
 
         if (index < 1 || index > daftarParfum.size()) {
-            System.out.println("Nomor data tidak valid.");
+            System.out.println("Nomor data tidak valid");
             return;
         }
 
         daftarParfum.remove(index - 1);
-        System.out.println("Data berhasil dihapus.");
+        System.out.println("Data berhasil dihapus");
     }
 }
