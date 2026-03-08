@@ -26,12 +26,12 @@ public class Parfum {
         int pilihan;
 
         do {
-            System.out.println("\n=== MENU PARFUM ===");
+            System.out.println("MENU PARFUM");
             System.out.println("1. Tambah Data");
             System.out.println("2. Tampil Data");
             System.out.println("3. Update Data");
             System.out.println("4. Hapus Data");
-            System.out.println("5. Exit");
+            System.out.println("5. Keluar Program");
             System.out.print("Masukkan pilihan anda: ");
             pilihan = input.nextInt();
             input.nextLine();
@@ -41,10 +41,10 @@ public class Parfum {
                 case 2 -> tampil();
                 case 3 -> update();
                 case 4 -> hapus();
-                case 5 -> System.out.println("Program selesai.");
-                default -> System.out.println("Pilihan tidak valid.");
+                case 5 -> System.out.println("Program selesai");
+                default -> System.out.println("Pilihan tidak valid");
             }
-        } while (pilihan != 0);
+        } while (pilihan != 5);
     }
 
     void tambah() {
@@ -68,12 +68,14 @@ public class Parfum {
             return;
         }
 
-        for (int i = 0; i < daftarParfum.size(); i++) {
-            System.out.println("Data ke-" + (i + 1));
-            System.out.println("Nama  : " + daftarParfum.get(i).nama);
-            System.out.println("Harga : " + daftarParfum.get(i).harga);
-            System.out.println("Isi   : " + daftarParfum.get(i).isi + " ml");
+        int nomor = 1;
+        for (DataParfum parfum : daftarParfum) {
+            System.out.println("Data ke " + nomor);
+            System.out.println("Nama  : " + parfum.nama);
+            System.out.println("Harga : " + parfum.harga);
+            System.out.println("Isi   : " + parfum.isi + " ml");
             System.out.println();
+            nomor++;
         }
     }
 
@@ -103,10 +105,15 @@ public class Parfum {
         int isiBaru = input.nextInt();
         input.nextLine();
 
-        daftarParfum.get(index - 1).nama = namaBaru;
-        daftarParfum.get(index - 1).harga = hargaBaru;
-        daftarParfum.get(index - 1).isi = isiBaru;
-
+        int no = 1;
+        for (DataParfum parfum : daftarParfum) {
+            if (no == index) {
+                parfum.nama = namaBaru;
+                parfum.harga = hargaBaru;
+                parfum.isi = isiBaru;
+            }
+            no++;
+        }
         System.out.println("Data berhasil diupdate");
     }
 
