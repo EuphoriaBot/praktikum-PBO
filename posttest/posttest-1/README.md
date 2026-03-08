@@ -1,18 +1,14 @@
-## Getting Started
+alone againnnnnn.....alone agaiinnnn....
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+import java.util.\* digunakan untuk mengimport semua package java.util seperti arraylist, scanner, dll
 
-## Folder Structure
+Merupakan class bernama DataParfum yang menyimpan beberapa atribut seperti nama, harga, dan isi dengan jenis tipe datanya masing masing
 
-The workspace contains two folders by default, where:
+Take me back, back home Đường về cũng chẳng có xa Đưa em về qua ba ngã năm Năm ngã ba là nhà Take me back, back home Đường về cũng chẳng có xa Đêm khuya rồi sao không có ai Đưa em đi về nhà
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+I've been away too long, way too long, but I'm home again
+Long after I had done, what I'd done, what's become of them?
+I thought their souls were gone, something's wrong
+So I need to put an end to everyone, everyone
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
-
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+![tampilanAwal](./assets/tampilanAwal.png)
