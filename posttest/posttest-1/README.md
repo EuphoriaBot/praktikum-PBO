@@ -73,4 +73,68 @@ Kalau ada isinya maka dia akan membuat variabel nomor bertipe int yang hasilnya 
 
 Terdapat perulangan for each yang berfungsi untuk mengambil data satu per satu dari daftarParfum dan menambah variabel nomor sebanyak 1 setiap perulangannya selesai, misal awalnya nomor = 1, setelah parfum pertama keluar, maka 1 + 1 = 2 untuk data parfum kedua, dst
 
+![blokVoidUpdate(1)](<./assets/blokCode/blokVoidUpdate(1).png>)
+
+![blokVoidUpdate(2)](<./assets/blokCode/blokVoidUpdate(2).png>)
+
+Berfungsi untuk mengubah data parfum yang sudah ada di ArrayList
+
+Sebelum mengupdate data parfum, dia akan mengecek dulu apakah datanya kosong apa tidak, kalau kosong maka akan menampilkan pesan Data parfum masih kosong
+
+Kalau ada isinya maka dia akan menampilkan dulu semua data parfum saat ini dengan method tampil()
+
+Kemudian kita bisa memasukkan angka untuk memilih data parfum mana yang ingin kita update, dengan kondisi user tidak boleh memasukkan angka kurang dari 1 atau user memasukkan angka lebih besar dari jumlah data yang ada
+
+Setelah semua kondisi terpenuhi, kita bisa memasukkan nama, harga, dan isi baru dan program akan menggantinya
+
+Terdapat fungsi no sebagai nomor urut saat program melakukan perulangan data pada parfum, menggunakan for-each agar program membaca setiap objek dataParfum di dalam DaftarParfum satu per satu, kemudia di cek apakah nomor urut saat ini sama dengan nomor data yang dipilh user
+
+![blokVoidHapus](./assets/blokCode/blokVoidHapus.png)
+
+Berfungsi untuk menghapus data parfum yang sudah ada di ArrayList
+
+Sebelum menghapus data parfum, dia akan mengecek dulu apakah datanya kosong apa tidak, kalau kosong maka akan menampilkan pesan Data parfum masih kosong
+
+Kalau ada isinya maka dia akan menampilkan dulu semua data parfum saat ini dengan method tampil()
+
+Kemudian kita bisa memasukkan angka untuk memilih data parfum mana yang ingin kita hapus, dengan kondisi user tidak boleh memasukkan angka kurang dari 1 atau user memasukkan angka lebih besar dari jumlah data yang ada
+
+Setelah semua kondisi terpenuhi, maka parfum yang dipilih akan terhapus
+
+2. HASIL OUTPUT
+
 ![tampilanAwal](./assets/tampilanProgram/tampilanAwal.png)
+
+Merupakan tampilan awal saat kita memulai program
+
+![tampilanDataKosong](./assets/tampilanProgram/tampilanDataKosong.png)
+
+Merupakan tampilan parfum saat gak ada parfumnya
+
+![tambahData1](./assets/tampilanProgram/tambahData1.png)
+
+Merupakan tampilan saat kita ingin menambah data parfum pertama
+
+![tampilanDataBerisi1](./assets/tampilanProgram/tampilanDataBerisi1.png)
+
+Merupakan tampilan saat kita sudah menambahkan parfum pertama
+
+![tambahData2](./assets/tampilanProgram/tambahData2.png)
+
+Merupakan tampilan saat kita ingin menambah data parfum kedua
+
+![tampilanDataBerisi1](./assets/tampilanProgram/tampilanDataBerisi2.png)
+
+Merupakan tampilan saat kita sudah menambahkan parfum kedua
+
+![updateData](./assets/tampilanProgram/updateData.png)
+
+Merupakan tampilan saat kita lagi mengupdate data
+
+![tampilanDataUpdate](./assets/tampilanProgram/tampilanDataUpdate.png)
+
+Merupakan tampilan parfum saat sudah ada yang diupdate
+
+![hapusData](./assets/tampilanProgram/hapusData.png)
+
+Merupakan tampilan saat kita ingin menghapus parfum
