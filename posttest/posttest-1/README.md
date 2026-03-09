@@ -138,3 +138,11 @@ Merupakan tampilan parfum saat sudah ada yang diupdate
 ![hapusData](./assets/tampilanProgram/hapusData.png)
 
 Merupakan tampilan saat kita ingin menghapus parfum
+
+![tampilanDataHapus](./assets/tampilanProgram/tampilanDataHapus.png)
+
+Merupakan tampilan parfum saat sudah ada parfum yang dihapus
+
+![keluarProgram](./assets/tampilanProgram/keluarProgram.png)
+
+Merupakan tampilan ketika kita sudah keluar dari program
