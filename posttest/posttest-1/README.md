@@ -42,11 +42,35 @@ Dapat menyimpan angka pilihan menu dari user di variabel pilihan bertipe int, se
 Menggunakan perulangan do-while agar program terus berjalan dan halaman menu nya minimal muncul dulu sekali, program akan terus mengulang selama user tidak menginput angka 5
 
 Jika user memilih angka 1 maka method tambah akan dijalankan
+
 Jika user memilih angka 2 maka method tampil akan dijalankan
+
 Jika user memilih angka 3 maka method update akan dijalankan
+
 Jika user memilih angka 4 maka method hapus akan dijalankan
+
 Jika user memilih angka 5 maka program akan berhenti dan menampilkan pesan Program selesai
+
 Jika user memilih angka selain angka 1, 2, 3, 4, dan 5 maka program akan menampilkan pesan Pilihan tidak valid dan akan tetap looping
 
+![blokVoidTambah](./assets/blokCode/blokVoidTambah.png)
+
+Digunakan untuk menambahkan data parfum ke DaftarParfum
+
+Untuk menambahkan nama menggunakan string karena tipe datanya teks, input.nextLine() untuk membaca satu baris teksnya lalu menyimpan input itu ke variabel nama
+
+Untuk harga dan isi sama saja caranya cuma beda di tipe data saja
+
+daftarParfum.add(new DataParfum(nama, harga, isi)); bagian ini berfungsi untuk membuat objek DataParfum baru dari input user tadi lalu memasukkan objek itu ke dalam ArrayList daftarParfum
+
+![blokVoidTampil](./assets/blokCode/blokVoidTampil.png)
+
+Digunakan untuk menampilkan data parfum saat ini
+
+Sebelum menampilkan data parfum, dia akan mengecek dulu apakah datanya kosong apa tidak, kalau kosong maka akan menampilkan pesan Data parfum masih kosong
+
+Kalau ada isinya maka dia akan membuat variabel nomor bertipe int yang hasilnya 1 cuma untuk memberi nomot urut saja pada data yang mau ditampilkan
+
+Terdapat perulangan for each yang berfungsi untuk mengambil data satu per satu dari daftarParfum dan menambah variabel nomor sebanyak 1 setiap perulangannya selesai, misal awalnya nomor = 1, setelah parfum pertama keluar, maka 1 + 1 = 2 untuk data parfum kedua, dst
+
 ![tampilanAwal](./assets/tampilanProgram/tampilanAwal.png)
-Tetstaydyabdyuanidanwidnawd
