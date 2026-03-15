@@ -123,7 +123,7 @@ Merupakan tampilan saat kita sudah menambahkan parfum pertama
 
 Merupakan tampilan saat kita ingin menambah data parfum kedua
 
-![tampilanDataBerisi1](./assets/tampilanProgram/tampilanDataBerisi2.png)
+![tampilanDataBerisi2](./assets/tampilanProgram/tampilanDataBerisi2.png)
 
 Merupakan tampilan saat kita sudah menambahkan parfum kedua
 

@@ -7,34 +7,46 @@ public class Parfum {
         private int harga;
         private int isi;
 
-        public DataParfum(String nama, int harga, int isi) {
-            this.nama = nama;
-            this.harga = harga;
-            this.isi = isi;
+        public DataParfum() {
         }
 
         public String getNama() {
             return nama;
         }
 
-        public void setNama(String nama) {
+        public boolean setNama(String nama) {
+            if (nama == null) {
+                System.out.println("Nama parfum tidak boleh kosong");
+                return false;
+            }
             this.nama = nama;
+            return true;
         }
 
         public int getHarga() {
             return harga;
         }
 
-        public void setHarga(int harga) {
+        public boolean setHarga(int harga) {
+            if (harga <= 0) {
+                System.out.println("Harga parfum harus lebih dari 0");
+                return false;
+            }
             this.harga = harga;
+            return true;
         }
 
         public int getIsi() {
             return isi;
         }
 
-        public void setIsi(int isi) {
+        public boolean setIsi(int isi) {
+            if (isi <= 0) {
+                System.out.println("Isi parfum harus lebih dari 0 ml");
+                return false;
+            }
             this.isi = isi;
+            return true;
         }
     }
 
@@ -61,39 +73,46 @@ public class Parfum {
             input.nextLine();
 
             switch (pilihan) {
-                case 1:
-                    tambah();
-                    break;
-                case 2:
-                    tampil();
-                    break;
-                case 3:
-                    update();
-                    break;
-                case 4:
-                    hapus();
-                    break;
-                case 5:
-                    System.out.println("Program selesai");
-                    break;
-                default:
-                    System.out.println("Pilihan tidak valid");
+                case 1 -> tambah();
+                case 2 -> tampil();
+                case 3 -> update();
+                case 4 -> hapus();
+                case 5 -> System.out.println("Program selesai");
+                default -> System.out.println("Pilihan tidak valid");
             }
         } while (pilihan != 5);
     }
 
     public void tambah() {
-        System.out.print("Masukkan nama parfum: ");
-        String nama = input.nextLine();
+        DataParfum parfumBaru = new DataParfum();
 
-        System.out.print("Masukkan harga parfum: ");
-        int harga = input.nextInt();
+        while (true) {
+            System.out.print("Masukkan nama parfum: ");
+            String nama = input.nextLine();
+            if (parfumBaru.setNama(nama)) {
+                break;
+            }
+        }
 
-        System.out.print("Masukkan isi parfum (ml): ");
-        int isi = input.nextInt();
-        input.nextLine();
+        while (true) {
+            System.out.print("Masukkan harga parfum: ");
+            int harga = input.nextInt();
+            input.nextLine();
+            if (parfumBaru.setHarga(harga)) {
+                break;
+            }
+        }
 
-        daftarParfum.add(new DataParfum(nama, harga, isi));
+        while (true) {
+            System.out.print("Masukkan isi parfum (ml): ");
+            int isi = input.nextInt();
+            input.nextLine();
+            if (parfumBaru.setIsi(isi)) {
+                break;
+            }
+        }
+
+        daftarParfum.add(parfumBaru);
         System.out.println("Data berhasil ditambahkan");
     }
 
@@ -132,19 +151,31 @@ public class Parfum {
 
         DataParfum parfum = daftarParfum.get(index - 1);
 
-        System.out.print("Masukkan nama parfum baru: ");
-        String namaBaru = input.nextLine();
+        while (true) {
+            System.out.print("Masukkan nama parfum baru: ");
+            String namaBaru = input.nextLine();
+            if (parfum.setNama(namaBaru)) {
+                break;
+            }
+        }
 
-        System.out.print("Masukkan harga baru: ");
-        int hargaBaru = input.nextInt();
+        while (true) {
+            System.out.print("Masukkan harga baru: ");
+            int hargaBaru = input.nextInt();
+            input.nextLine();
+            if (parfum.setHarga(hargaBaru)) {
+                break;
+            }
+        }
 
-        System.out.print("Masukkan isi baru (ml): ");
-        int isiBaru = input.nextInt();
-        input.nextLine();
-
-        parfum.setNama(namaBaru);
-        parfum.setHarga(hargaBaru);
-        parfum.setIsi(isiBaru);
+        while (true) {
+            System.out.print("Masukkan isi baru (ml): ");
+            int isiBaru = input.nextInt();
+            input.nextLine();
+            if (parfum.setIsi(isiBaru)) {
+                break;
+            }
+        }
 
         System.out.println("Data berhasil diupdate");
     }
