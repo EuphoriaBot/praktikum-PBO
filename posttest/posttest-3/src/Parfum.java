@@ -58,20 +58,7 @@ public class Parfum {
         return "Parfum";
     }
 
-    public String getLabelTambahan() {
-        return "detail";
-    }
-
-    public String getDetailTambahan() {
-        return "-";
-    }
-
-    public boolean setDetailTambahan(String detail) {
-        return true;
-    }
-
     protected void Output() {
-        System.out.println("Jenis : " + getJenis());
         System.out.println("Nama  : " + getNama());
         System.out.println("Harga : " + getHarga());
         System.out.println("Isi   : " + getIsi() + " ml");
@@ -183,14 +170,6 @@ public class Parfum {
             }
         }
 
-        while (true) {
-            System.out.print("Masukkan " + parfumBaru.getLabelTambahan() + ": ");
-            String detail = input.nextLine();
-            if (parfumBaru.setDetailTambahan(detail)) {
-                break;
-            }
-        }
-
         return parfumBaru;
     }
 
@@ -203,6 +182,7 @@ public class Parfum {
         int nomor = 1;
         for (Parfum parfum : daftarParfum) {
             System.out.println("\nData ke " + nomor);
+            System.out.println("Jenis : " + parfum.getJenis());
             parfum.Output();
             nomor++;
         }
