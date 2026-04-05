@@ -128,46 +128,46 @@ Terdapat perilaku khusus yang dimiliki ParfumWanita yaitu aromaNetral()
 
 2. HASIL OUTPUT
 
-![blokMenuAwal](./assets/tampilanProgram/MenuAwal.png)
+![blokMenuAwal](./assets/TampilanProgram/MenuAwal.png)
 
 Tampilan halaman awal
 
-![blokTampilDataKosong](./assets/tampilanProgram/TampilDataKosong.png)
+![blokTampilDataKosong](./assets/TampilanProgram/TampilDataKosong.png)
 
 Tampilan data kosong
 
-![blokParfumPria](./assets/tampilanProgram/TambahParfumPria.png)
+![blokParfumPria](./assets/TampilanProgram/TambahParfumPria.png)
 
 Tambah data parfum pria
 
-![blokParfumWanita](./assets/tampilanProgram/TambahParfumWanita.png)
+![blokParfumWanita](./assets/TampilanProgram/TambahParfumWanita.png)
 
 Tambah data parfum wanita
 
-![blokParfumUnisex](./assets/tampilanProgram/TambahParfumUnisex.png)
+![blokParfumUnisex](./assets/TampilanProgram/TambahParfumUnisex.png)
 
 Tambah data parfum unisex
 
-![blokTampilData](./assets/tampilanProgram/TampilData.png)
+![blokTampilData](./assets/TampilanProgram/TampilData.png)
 
 Tampilkan data
 
-![blokUpdate(1)](<./assets/tampilanProgram/UpdateParfum(1).png>)
+![blokUpdate(1)](<./assets/TampilanProgram/UpdateParfum(1).png>)
 
-![blokUpdate(2)](<./assets/tampilanProgram/UpdateParfum(2).png>)
+![blokUpdate(2)](<./assets/TampilanProgram/UpdateParfum(2).png>)
 
 Update data
 
-![blokDataUpdate](<./assets/tampilanProgram/TampilData(Updated).png>)
+![blokDataUpdate](<./assets/TampilanProgram/TampilData(Updated).png>)
 
 Tampilkan data (updated)
 
-![blokHapus](./assets/tampilanProgram/HapusParfum.png)
+![blokHapus](./assets/TampilanProgram/HapusParfum.png)
 
 Hapus Parfum
 
-![blokDataHapus](<./assets/tampilanProgram/TampilkanParfum(Deleted).png>)
+![blokDataHapus](<./assets/TampilanProgram/TampilkanParfum(Deleted).png>)
 
 Tampilkan data (deleted)
 
-![blokKeluarProgram](./assets/tampilanProgram/KeluarProgram.png)
+![blokKeluarProgram](./assets/TampilanProgram/KeluarProgram.png)
