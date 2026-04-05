@@ -12,29 +12,29 @@ import java.util.Arraylist dan improt java.util.Scanner digunakan untuk mengimpo
 
 Membuat class utama parfum yang bersifat public agar bisa diakses di luar kelas
 
-Membuat class DataParfum yang berisi atribut nama, isi, dan harga yang bersifat private agar tidak bisa diakses di luar kelas
+Membuat class DataParfum yang berisi atribut nama, isi, jenis dan harga yang bersifat private agar tidak bisa diakses di luar kelas
 
 Membuat constructor kosong untuk membuat objek DataParfum tanpa langsung mengisi data
 
-![blokGetterSetter(1)](<./assets/blokCode/blokGetterSetter(1).png>)
+Membuat constructor dengan isi dengan parameter nama, isi, jenis, dan harga yang nanti digunakan untuk langsung isi data saat membuat objek
 
-![blokGetterSetter(2)](<./assets/blokCode/blokGetterSetter(2).png>)
+![blokGetterSetter(1)](<./assets/blokCode/GetterSetter(1).png)
 
-Memakai method getter untuk mengambil nilai nama, isi dan harga yang semuanya bersifat public
+![blokGetterSetter(2)](<./assets/blokCode/GetterSetter(2).png>)
 
-Memakai method setter untuk untuk mengisi nilai dari nama, isi dan harga yang diisi boolean untuk mengembalikan hasil true atau false dan semuanya bersifat public
+Memakai method getter untuk mengambil nilai nama, isi, jenis dan harga yang semuanya bersifat public
 
-Setiap method setter memiliki kondisinya sendiri dimana untuk nama parfum tidak boleh kosong, harga parfum harus lebih dari 0, dan isi parfum harus lebih dari 0, jika kondisi terpenuhi maka akan menghasilkan nilai true
+Memakai method setter untuk untuk mengisi nilai dari nama, jenis, isi dan harga yang diisi boolean untuk mengembalikan hasil true atau false dan semuanya bersifat public
 
-![blokMain](./assets/blokCode/blokMain.png)
+Setiap method setter memiliki kondisinya sendiri dimana untuk nama parfum tidak boleh kosong, jenis parfum tidak boleh kosong, harga parfum harus lebih dari 0, dan isi parfum harus lebih dari 0, jika kondisi terpenuhi maka akan menghasilkan nilai true
+
+Terdapat protected void output gunanya cuma untuk menampilkan output data parfum ke layar
+
+![blokMenu(1)](<./assets/blokCode/Menu(1).png>)
+
+![blokMenu(2)](<./assets/blokCode/Menu(2).png>)
 
 Membuat arraylist bernama daftarParfum yang fungsinya untuk menyimpan banyak data parfum
-
-Scanner digunakan untuk menerima input dari user
-
-Blok main merupakan method pertama yang dijalankan saat program dimulai
-
-![blokMenu](./assets/blokCode/blokMenu.png)
 
 Method yang berfungsi untuk menampilkan menu utama
 
@@ -54,17 +54,17 @@ Jika user memilih angka 5 maka program akan berhenti dan menampilkan pesan Progr
 
 Jika user memilih angka selain angka 1, 2, 3, 4, dan 5 maka program akan menampilkan pesan Pilihan tidak valid dan akan tetap looping
 
-![blokVoidTambah](./assets/blokCode/blokVoidTambah.png)
+![blokVoidTambah(1)](<./assets/blokCode/VoidTambah(1).png>)
+
+![blokVoidTambah(2)](<./assets/blokCode/VoidTambah(2).pngg>)
 
 Method tambah digunakan untuk menambah parfum baru
 
-Membuat objek parfum dari class DataParfum, lalu membuat perulangan while (true) agar perulangannya terus terjadi sampai inputan valid
-
-User diminta memasukkan nama, harga, dan isi parfum, inputan dari user akan dikirim ke masing-masing setter yang berhubungan dan akan di cek melalui kondisi setternya masing-masing, jika hasilnya true maka inputan akan valid dan tersimpan
+User diminta memasukkan nama, jenis, harga, dan isi parfum, inputan dari user akan dikirim ke masing-masing setter yang berhubungan dan akan di cek melalui kondisi setternya masing-masing, jika hasilnya true maka inputan akan valid dan tersimpan
 
 Method ini merupakan public karena method ini aman untuk dipanggil di luar class
 
-![blokVoidTampil](./assets/blokCode/blokVoidTampil.png)
+![blokVoidTampil](./assets/blokCode/VoidTampil.png)
 
 Method tampil digunakan untuk menampilkan daftar parfum saat ini
 
@@ -74,13 +74,13 @@ Kalau ada isinya maka dia akan membuat variabel nomor bertipe int yang hasilnya 
 
 Terdapat perulangan for yang berfungsi untuk mengambil data satu per satu dari daftarParfum dan menambah variabel nomor sebanyak 1 setiap perulangannya selesai, misal awalnya nomor = 1, setelah parfum pertama keluar, maka 1 + 1 = 2 untuk data parfum kedua, dst
 
+Program melakukan pengecekan tipe objek menggunakan instancoof untuk mengetahui apakah objek tersebut merupakan ParfumPria, ParfumWanita, ParfumUnisex. Jika objek termasuk ParfumPria, maka akan dilakukan casting ke tipe ParfumPrida dan memanggil method aromaMaskulin(), begitupun dengan ParfumWanita, dan ParfumUnisex
+
 Terakhir menampilkan hasilnya dengan mengimplementasikan konsep getter
 
 Method ini bersifat protected karena secara fungsi, tampil() bisa dianggap method yang masih boleh diwariskan jika nanti ada class turunan
 
-![blokVoidUpdate(1)](<./assets/blokCode/blokVoidUpdate(1).png>)
-
-![blokVoidUpdate(2)](<./assets/blokCode/blokVoidUpdate(2).png>)
+![blokVoidUpdate(1)](./assets/blokCode/VoidUpdate.png)
 
 Berfungsi untuk mengubah data parfum yang sudah ada di ArrayList
 
@@ -90,11 +90,11 @@ Kalau ada isinya maka dia akan menampilkan dulu semua data parfum saat ini denga
 
 Kemudian kita bisa memasukkan angka untuk memilih data parfum mana yang ingin kita update, dengan kondisi user tidak boleh memasukkan angka kurang dari 1 atau user memasukkan angka lebih besar dari jumlah data yang ada
 
-Setelah semua kondisi terpenuhi, kita bisa memasukkan nama, harga, dan isi baru dan program akan menggantinya dengan mengimplementasikan konsep setter
+Setelah semua kondisi terpenuhi, kita bisa memasukkan nama, jenis, harga, dan isi baru dan program akan menggantinya dengan mengimplementasikan konsep setter
 
 Method ini bersifat private karena sser tidak berinteraksi langsung dengan method ini dari luar class
 
-![blokVoidHapus](./assets/blokCode/blokVoidHapus.png)
+![blokVoidHapus](./assets/blokCode/VoidHapus.png)
 
 Berfungsi untuk menghapus data parfum yang sudah ada di ArrayList
 
@@ -108,28 +108,66 @@ Setelah semua kondisi terpenuhi, maka parfum yang dipilih akan terhapus\
 
 Method hapus cocok memakai modifier default karena hapus() tetap bisa dipakai di class yang sama atau package yang sama, tetapi tidak dibuka penuh seperti public
 
+![blokParfumPria](./assets/blokCode/ParfumPria.png)
+
+Mendefinisikan class ParfumPria sebagai turunan dari parfum menggunakan konsep inheritance yang diimplementasikan dengan extends jadi ParfumPria mewarisi semua atribut dan method yang ada di class parfum
+
+Terdapat perilaku khusus yang dimiliki ParfumPria yaitu aromaMaskulin()
+
+![blokParfumWanita](./assets/blokCode/ParfumWanita.png)
+
+Mendefinisikan class ParfumWanita sebagai turunan dari parfum menggunakan konsep inheritance yang diimplementasikan dengan extends jadi ParfumWanita mewarisi semua atribut dan method yang ada di class parfum
+
+Terdapat perilaku khusus yang dimiliki ParfumWanita yaitu aromaFeminin()
+
+![blokParfumUnisex](./assets/blokCode/ParfumUnisex.png)
+
+Mendefinisikan class ParfumUnisex sebagai turunan dari parfum menggunakan konsep inheritance yang diimplementasikan dengan extends jadi ParfumUnisex mewarisi semua atribut dan method yang ada di class parfum
+
+Terdapat perilaku khusus yang dimiliki ParfumWanita yaitu aromaNetral()
+
 2. HASIL OUTPUT
 
-![blokMenu](./assets/tampilanProgram/HalamanAwal.png)
+![blokMenuAwal](./assets/tampilanProgram/MenuAwal.png)
 
 Tampilan halaman awal
 
-![blokTambah](./assets/tampilanProgram/Tambah.png)
+![blokTampilDataKosong](./assets/tampilanProgram/TampilDataKosong.png)
 
-Tampilan tambah parfum
+Tampilan data kosong
 
-![blokTampil](./assets/tampilanProgram/Tampil.png)
+![blokParfumPria](./assets/tampilanProgram/TambahParfumPria.png)
 
-Menampilkan parfum
+Tambah data parfum pria
 
-![blokUpdate](./assets/tampilanProgram/Update.png)
+![blokParfumWanita](./assets/tampilanProgram/TambahParfumWanita.png)
 
-Tampilan update parfum
+Tambah data parfum wanita
 
-![blokHapus](./assets/tampilanProgram/Hapus.png)
+![blokParfumUnisex](./assets/tampilanProgram/TambahParfumUnisex.png)
 
-Tampilan hapus parfum
+Tambah data parfum unisex
 
-![blokKeluar](./assets/tampilanProgram/Keluar.png)
+![blokTampilData](./assets/tampilanProgram/TampilData.png)
 
-Tampilan keluar program
+Tampilkan data
+
+![blokUpdate(1)](<./assets/tampilanProgram/UpdateParfum(1).png>)
+
+![blokUpdate(2)](<./assets/tampilanProgram/UpdateParfum(2).png>)
+
+Update data
+
+![blokDataUpdate](<./assets/tampilanProgram/TampilData(Updated).png>)
+
+Tampilkan data (updated)
+
+![blokHapus](./assets/tampilanProgram/HapusParfum.png)
+
+Hapus Parfum
+
+![blokDataHapus](<./assets/tampilanProgram/TampilkanParfum(Deleted).png>)
+
+Tampilkan data (deleted)
+
+![blokKeluarProgram](./assets/tampilanProgram/KeluarProgram.png)
