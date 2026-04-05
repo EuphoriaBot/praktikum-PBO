@@ -76,8 +76,6 @@ public class Parfum {
         System.out.println("Isi   : " + isi + " ml");
     }
 
-    // ================= MENU =================
-
     public static void mainMenu() {
         ArrayList<Parfum> daftarParfum = new ArrayList<>();
         Scanner input = new Scanner(System.in);
@@ -132,15 +130,19 @@ public class Parfum {
         System.out.print("Masukkan jenis parfum (pria/wanita/unisex): ");
         String jenis = input.nextLine();
 
-        if (jenis.equalsIgnoreCase("pria")) {
-            parfumBaru = new ParfumPria();
-        } else if (jenis.equalsIgnoreCase("wanita")) {
-            parfumBaru = new ParfumWanita();
-        } else if (jenis.equalsIgnoreCase("unisex")) {
-            parfumBaru = new ParfumUnisex();
-        } else {
-            System.out.println("Jenis tidak valid!");
-            return null;
+        switch (jenis) {
+            case "pria":
+                parfumBaru = new ParfumPria();
+                break;
+            case "wanita":
+                parfumBaru = new ParfumWanita();
+                break;
+            case "unisex":
+                parfumBaru = new ParfumUnisex();
+                break;
+            default:
+                System.out.println("Jenis tidak valid!");
+                return null;
         }
 
         parfumBaru.setJenis(jenis);
