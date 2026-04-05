@@ -3,14 +3,16 @@ import java.util.Scanner;
 
 public class Parfum {
     private String nama;
+    private String jenis;
     private int harga;
     private int isi;
 
     public Parfum() {
     }
 
-    public Parfum(String nama, int harga, int isi) {
+    public Parfum(String nama, String jenis, int harga, int isi) {
         this.nama = nama;
+        this.jenis = jenis;
         this.harga = harga;
         this.isi = isi;
     }
@@ -25,6 +27,19 @@ public class Parfum {
             return false;
         }
         this.nama = nama;
+        return true;
+    }
+
+    public String getJenis() {
+        return jenis;
+    }
+
+    public boolean setJenis(String jenis) {
+        if (jenis == null || jenis.trim().isEmpty()) {
+            System.out.println("Jenis parfum tidak boleh kosong");
+            return false;
+        }
+        this.jenis = jenis;
         return true;
     }
 
@@ -54,18 +69,17 @@ public class Parfum {
         return true;
     }
 
-    public String getJenis() {
-        return "Parfum";
+    protected void Output() {
+        System.out.println("Nama  : " + nama);
+        System.out.println("Jenis : " + jenis);
+        System.out.println("Harga : " + harga);
+        System.out.println("Isi   : " + isi + " ml");
     }
 
-    protected void Output() {
-        System.out.println("Nama  : " + getNama());
-        System.out.println("Harga : " + getHarga());
-        System.out.println("Isi   : " + getIsi() + " ml");
-    }
+    // ================= MENU =================
 
     public static void mainMenu() {
-        ArrayList<Parfum> daftarParfum = new ArrayList<Parfum>();
+        ArrayList<Parfum> daftarParfum = new ArrayList<>();
         Scanner input = new Scanner(System.in);
         int pilihan;
 
@@ -98,7 +112,6 @@ public class Parfum {
                     break;
                 default:
                     System.out.println("Pilihan tidak valid");
-                    break;
             }
         } while (pilihan != 5);
 
@@ -107,67 +120,52 @@ public class Parfum {
 
     static void tambah(ArrayList<Parfum> daftarParfum, Scanner input) {
         Parfum parfumBaru = inputDataParfum(input);
-
         if (parfumBaru != null) {
             daftarParfum.add(parfumBaru);
             System.out.println("Data berhasil ditambahkan");
         }
     }
 
-    static Parfum pilihJenisParfum(Scanner input) {
-        int jenis;
-
-        System.out.println("\nPilih jenis parfum:");
-        System.out.println("1. Parfum Pria");
-        System.out.println("2. Parfum Wanita");
-        System.out.println("3. Parfum Unisex");
-        System.out.print("Masukkan pilihan: ");
-        jenis = input.nextInt();
-        input.nextLine();
-
-        if (jenis == 1) {
-            return new ParfumPria();
-        } else if (jenis == 2) {
-            return new ParfumWanita();
-        } else if (jenis == 3) {
-            return new ParfumUnisex();
-        } else {
-            System.out.println("Jenis parfum tidak valid");
-            return null;
-        }
-    }
-
     static Parfum inputDataParfum(Scanner input) {
-        Parfum parfumBaru = pilihJenisParfum(input);
+        Parfum parfumBaru;
 
-        if (parfumBaru == null) {
+        System.out.print("Masukkan jenis parfum (pria/wanita/unisex): ");
+        String jenis = input.nextLine();
+
+        if (jenis.equalsIgnoreCase("pria")) {
+            parfumBaru = new ParfumPria();
+        } else if (jenis.equalsIgnoreCase("wanita")) {
+            parfumBaru = new ParfumWanita();
+        } else if (jenis.equalsIgnoreCase("unisex")) {
+            parfumBaru = new ParfumUnisex();
+        } else {
+            System.out.println("Jenis tidak valid!");
             return null;
         }
+
+        parfumBaru.setJenis(jenis);
 
         while (true) {
             System.out.print("Masukkan nama parfum: ");
             String nama = input.nextLine();
-            if (parfumBaru.setNama(nama)) {
+            if (parfumBaru.setNama(nama))
                 break;
-            }
         }
 
         while (true) {
             System.out.print("Masukkan harga parfum: ");
             int harga = input.nextInt();
             input.nextLine();
-            if (parfumBaru.setHarga(harga)) {
+            if (parfumBaru.setHarga(harga))
                 break;
-            }
         }
 
         while (true) {
             System.out.print("Masukkan isi parfum (ml): ");
             int isi = input.nextInt();
             input.nextLine();
-            if (parfumBaru.setIsi(isi)) {
+            if (parfumBaru.setIsi(isi))
                 break;
-            }
         }
 
         return parfumBaru;
@@ -182,8 +180,15 @@ public class Parfum {
         int nomor = 1;
         for (Parfum parfum : daftarParfum) {
             System.out.println("\nData ke " + nomor);
-            System.out.println("Jenis : " + parfum.getJenis());
             parfum.Output();
+            if (parfum instanceof ParfumPria) {
+                ((ParfumPria) parfum).aromaMaskulin();
+            } else if (parfum instanceof ParfumWanita) {
+                ((ParfumWanita) parfum).aromaFeminin();
+            } else if (parfum instanceof ParfumUnisex) {
+                ((ParfumUnisex) parfum).aromaNetral();
+            }
+
             nomor++;
         }
     }
@@ -207,10 +212,8 @@ public class Parfum {
         System.out.println("\nMasukkan data parfum baru:");
         Parfum parfumBaru = inputDataParfum(input);
 
-        if (parfumBaru != null) {
-            daftarParfum.set(index - 1, parfumBaru);
-            System.out.println("Data berhasil diupdate");
-        }
+        daftarParfum.set(index - 1, parfumBaru);
+        System.out.println("Data berhasil diupdate");
     }
 
     static void hapus(ArrayList<Parfum> daftarParfum, Scanner input) {

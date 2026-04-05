@@ -8,7 +8,7 @@ Merupakan bagian awal dari kode yang akan dijalankan, membuat kelas bernama App 
 
 ![blokImportDataParfum](./assets/blokCode/ImportDataParfum.png)
 
-import java.util.\* digunakan untuk mengimport semua package java.util seperti arraylist, scanner, dll
+import java.util.Arraylist dan improt java.util.Scanner digunakan untuk mengimport package java.util seperti arraylist, scanner, dll
 
 Membuat class utama parfum yang bersifat public agar bisa diakses di luar kelas
 
