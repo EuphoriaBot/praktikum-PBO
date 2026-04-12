@@ -160,7 +160,7 @@ Update data
 
 ![blokDataUpdate](<./assets/TampilanProgram/TampilData(Updated).png>)
 
-Tampilkan data (updated)
+Tampilkan data (updated)s
 
 ![blokHapus](./assets/TampilanProgram/HapusParfum.png)
 
