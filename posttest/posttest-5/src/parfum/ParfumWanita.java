@@ -4,10 +4,10 @@ public class ParfumWanita extends Parfum implements Aroma {
 
     @Override
     protected void Output() {
-        System.out.println("Nama  : " + getNama());
-        System.out.println("Jenis : " + getJenis());
-        System.out.println("Harga : " + getHarga());
-        System.out.println("Isi   : " + getIsi() + " ml");
+        System.out.println("Nama Parfum  : " + getNama());
+        System.out.println("Jenis Parfum : " + getJenis());
+        System.out.println("Harga Parfum : " + getHarga());
+        System.out.println("Isi Parfum   : " + getIsi() + " ml");
         infoAroma();
         kategoriAroma();
     }

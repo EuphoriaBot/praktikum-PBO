@@ -127,7 +127,7 @@ public abstract class Parfum {
             case "wanita" -> parfumBaru = new ParfumWanita();
             case "unisex" -> parfumBaru = new ParfumUnisex();
             default -> {
-                System.out.println("Jenis tidak valid!");
+                System.out.println("Jenis tidak valid");
                 return null;
             }
         }
@@ -135,13 +135,13 @@ public abstract class Parfum {
         parfumBaru.setJenis(jenis);
 
         while (true) {
-            System.out.print("Nama: ");
+            System.out.print("Nama Parfum: ");
             if (parfumBaru.setNama(input.nextLine()))
                 break;
         }
 
         while (true) {
-            System.out.print("Harga: ");
+            System.out.print("Harga Parfum: ");
             int harga = input.nextInt();
             input.nextLine();
             if (parfumBaru.setHarga(harga))
@@ -149,7 +149,7 @@ public abstract class Parfum {
         }
 
         while (true) {
-            System.out.print("Isi: ");
+            System.out.print("Isi Parfum (ml): ");
             int isi = input.nextInt();
             input.nextLine();
             if (parfumBaru.setIsi(isi))
@@ -161,7 +161,7 @@ public abstract class Parfum {
 
     static void tampil(ArrayList<Parfum> daftarParfum) {
         if (daftarParfum.isEmpty()) {
-            System.out.println("Kosong");
+            System.out.println("Data Masih Kosong");
             return;
         }
 
